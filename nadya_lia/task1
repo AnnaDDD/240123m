@@ -1,0 +1,12 @@
+db.reactions.aggregate([
+    {
+        $lookup: {
+            from: 'users',
+            localField: 'author_id',
+            foreignField: '_id',
+            as: 'author'
+        }
+    },
+    { $match: {'author.is_blocked': { §ne: true }}},
+    { $group: { _id: null, avgValue: { $avg: '$value' } } }
+])
