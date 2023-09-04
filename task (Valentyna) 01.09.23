@@ -1,0 +1,4 @@
+SELECT  
+*  
+FROM products
+WHERE Price <(SELECT  avg(Price)  FROM products);
