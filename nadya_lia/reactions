@@ -1,0 +1,9 @@
+CREATE TABLE IF not EXISTS reactions (
+  reaction_id INTEGER PRIMARY KEY auto_increment,
+  created_at TIMESTAMP default current_timestamp,
+  value INTEGER check (value between 1 and 5),
+  video_id INTEGER,
+  author_id INTEGER,
+  foreign key (video_id) references videos(video_id),
+  foreign key (author_id) references users(user_id)
+);
