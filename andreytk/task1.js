@@ -13,7 +13,7 @@ db.reactions.aggregate([
     { $unwind: '$author' },
     { $match: { 'author.is_blocked': { $ne: true } } },
     { $group: {
-            _id: "$value",
+            _id: null,
             avg_react: { $avg: "$value" }
         }
     }
