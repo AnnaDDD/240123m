@@ -1,0 +1,10 @@
+CREATE TABLE reactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    user_id INT NOT NULL,
+    video_id INT NOT NULL,
+    likes INT ,
+    comment TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (video_id) REFERENCES videos(id)
+);
