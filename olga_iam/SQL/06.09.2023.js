@@ -5,3 +5,5 @@ create table if not exists reactions(
     content varchar(256) not null,
     FOREIGN KEY (author_id) REFERENCES users(id)
 );
+
+Helo world!
